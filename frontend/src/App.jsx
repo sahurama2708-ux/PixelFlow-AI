@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = 'https://github.com/sahurama2708-ux/PixelFlow-AI.git';
 
 // Backend ke purane/naye dono formats ko ek shape me laao
 const normalizeHistoryItem = (h) => ({
