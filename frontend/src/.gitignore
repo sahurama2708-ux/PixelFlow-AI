@@ -1,0 +1,15 @@
+# Backend Folders & Cache
+backend/venv/
+backend/__pycache__/
+backend/processed_images/
+backend/history.json
+backend/.env
+
+# Frontend Folders & Build Outputs
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# OS Specific Files
+.DS_Store
+Thumbs.db
