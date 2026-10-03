@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const API_BASE = 'https://github.com/sahurama2708-ux/PixelFlow-AI.git';
+const API_BASE = 'https://echogrid-ai-project-1.onrender.com';
 
 // Backend ke purane/naye dono formats ko ek shape me laao
 const normalizeHistoryItem = (h) => ({
