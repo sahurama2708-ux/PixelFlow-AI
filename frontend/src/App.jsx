@@ -196,17 +196,6 @@ export default function App() {
     setCurrentScreen('dashboard');
   };
 
-  // Yahan Google login me prompt lagaya hai taaki user apna real email daal sake
-  const handleGoogleLogin = () => {
-    const userEmail = window.prompt('Apna real Google email address enter karein:');
-    if (userEmail && userEmail.includes('@')) {
-      setEmail(userEmail.trim());
-      setCurrentScreen('dashboard');
-    } else if (userEmail !== null) {
-      alert('Kripya ek valid email enter karein!');
-    }
-  };
-
   const handleCustomBgApply = (e) => {
     e.preventDefault();
     if (customBgInput.trim()) {
@@ -410,10 +399,6 @@ export default function App() {
                 Login →
               </button>
             </form>
-
-            <button onClick={handleGoogleLogin} style={{ width: '100%', background: 'rgba(56, 189, 248, 0.05)', color: '#fff', border: '1px solid rgba(56, 189, 248, 0.2)', borderRadius: '12px', padding: '12px', fontWeight: '500', fontSize: '13px', cursor: 'pointer', marginTop: '12px' }}>
-              🌐 Continue with Google
-            </button>
           </div>
         </div>
       )}
@@ -536,7 +521,6 @@ export default function App() {
                       <input type="file" multiple onChange={handleFileChange} style={{ fontSize: '11px', color: '#cbd5e1', background: 'rgba(5, 10, 20, 0.9)', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '8px', borderRadius: '8px', width: '100%', boxSizing: 'border-box' }} />
                     </div>
 
-                    {/* ✨ AI "Fix My Batch" Feature Section */}
                     <div style={{ backgroundColor: 'rgba(12, 22, 45, 0.85)', padding: '12px', borderRadius: '10px', border: '1px solid rgba(56, 189, 248, 0.35)', boxShadow: 'inset 0 0 10px rgba(56,189,248,0.1)' }}>
                       <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#38bdf8', fontWeight: 'bold', cursor: 'pointer', marginBottom: '8px', textShadow: '0 0 6px rgba(56,189,248,0.4)' }}>
                         <input type="checkbox" checked={enableFixMyBatch} onChange={(e) => setEnableFixMyBatch(e.target.checked)} style={{ accentColor: '#38bdf8', width: '14px', height: '14px' }} />
@@ -558,7 +542,6 @@ export default function App() {
                       )}
                     </div>
 
-                    {/* "Make This Batch Look Like This" Feature Section */}
                     <div style={{ backgroundColor: 'rgba(12, 22, 45, 0.85)', padding: '12px', borderRadius: '10px', border: '1px solid rgba(56, 189, 248, 0.35)', boxShadow: 'inset 0 0 10px rgba(56,189,248,0.1)' }}>
                       <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#38bdf8', fontWeight: 'bold', cursor: 'pointer', marginBottom: '8px', textShadow: '0 0 6px rgba(56,189,248,0.4)' }}>
                         <input type="checkbox" checked={enableStyleMatch} onChange={(e) => setEnableStyleMatch(e.target.checked)} style={{ accentColor: '#38bdf8', width: '14px', height: '14px' }} />
