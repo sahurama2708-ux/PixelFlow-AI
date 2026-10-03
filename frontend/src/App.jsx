@@ -196,9 +196,15 @@ export default function App() {
     setCurrentScreen('dashboard');
   };
 
+  // Yahan Google login me prompt lagaya hai taaki user apna real email daal sake
   const handleGoogleLogin = () => {
-    setEmail('ramasahu@gmail.com');
-    setCurrentScreen('dashboard');
+    const userEmail = window.prompt('Apna real Google email address enter karein:');
+    if (userEmail && userEmail.includes('@')) {
+      setEmail(userEmail.trim());
+      setCurrentScreen('dashboard');
+    } else if (userEmail !== null) {
+      alert('Kripya ek valid email enter karein!');
+    }
   };
 
   const handleCustomBgApply = (e) => {
@@ -317,7 +323,6 @@ export default function App() {
       setHistory(prev => [...savedItems, ...prev]);
     } catch (err) {
       console.error('History save error:', err);
-      // backend down ho to kam se kam is session me dikhe
       setHistory(prev => [...newProcessedItems.map(normalizeHistoryItem), ...prev]);
       alert('⚠️ History backend me save nahi hui (server band hai?). Refresh karne par ye items chale jayenge.');
     }
@@ -483,8 +488,10 @@ export default function App() {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{ background: 'linear-gradient(135deg, #0284c7, #38bdf8)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '12px', boxShadow: '0 0 10px #38bdf8' }}>RS</div>
-                <span style={{ fontSize: '13px', fontWeight: '600', color: '#f1f5f9' }}>{email ? email.split('@')[0] : 'Rama Sahu'}</span>
+                <div style={{ background: 'linear-gradient(135deg, #0284c7, #38bdf8)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '12px', boxShadow: '0 0 10px #38bdf8' }}>
+                  {email ? email.charAt(0).toUpperCase() : 'U'}
+                </div>
+                <span style={{ fontSize: '13px', fontWeight: '600', color: '#f1f5f9' }}>{email ? email.split('@')[0] : 'User'}</span>
               </div>
             </div>
 
